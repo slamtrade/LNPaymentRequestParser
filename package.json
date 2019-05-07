@@ -1,8 +1,10 @@
 {
   "name": "docker_web_app",
   "version": "1.0.0",
+  "license": "MIT", 
+  "private": true,
   "description": "Node.js on Docker",
-  "author": "slamtrade <rombright@gmail.com>",
+  "author": "slamtrade <slamtradebangalore@gmail.com>",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -10,6 +12,11 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "bolt11": "^1.2.5",
-    "express": "^4.16.1"
+    "express": "^4.16.1", 
+    "coininfo": "^4.5.0"
+  }, 
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/slamtrade/LNPaymentRequestParser.git"
   }
 }

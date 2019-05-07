@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 var lightningPayReq = require('bolt11');
 
 // Constants
-const PORT = 8082;
+const PORT = 8080;
 const HOST = "0.0.0.0";
 var input, result;
 
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 app.get("/", (req, res) => {
-  res.send("Hello world\n");
+  res.send("LnDecode Successfully Running");
 });
 
 /* paylad 
@@ -32,14 +32,15 @@ app.get("/", (req, res) => {
 // Add headers
 app.use(function (req, res, next) {
 
-  var allowedOrigins = ['http://localhost:4200', 'http://localhost:8080'];
-  var origin = req.headers.origin;
-  if(allowedOrigins.indexOf(origin) > -1){
-       res.setHeader('Access-Control-Allow-Origin', origin);
-  }
+//   var allowedOrigins = ['http://localhost:4200', 'http://localhost:8080'];
+//   var origin = req.headers.origin;
+//   console.log(req.headers.origin);
+//   if(allowedOrigins.indexOf(origin) > -1){
+//        res.setHeader('Access-Control-Allow-Origin', origin);
+//   }
 
   // Website you wish to allow to connect
-  //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
